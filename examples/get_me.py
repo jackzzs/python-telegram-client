@@ -1,7 +1,7 @@
 import argparse
 from pprint import pprint
 
-from telegram.client import Telegram
+from teleclient.client import Telegram
 
 import utils
 

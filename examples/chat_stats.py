@@ -4,7 +4,7 @@ import argparse
 from collections import Counter
 
 from utils import setup_logging
-from telegram.client import Telegram
+from teleclient.client import Telegram
 
 
 """

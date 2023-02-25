@@ -13,7 +13,7 @@ def get_version(package):
     return re.match("__version__ = ['\"]([^'\"]+)['\"]", init_py).group(1)
 
 
-version = get_version('telegram')
+version = get_version('teleclient')
 
 
 setup(

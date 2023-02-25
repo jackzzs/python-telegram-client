@@ -2,10 +2,10 @@ import pytest
 
 from unittest.mock import patch
 
-from telegram import VERSION
-from telegram.utils import AsyncResult
-from telegram.client import Telegram, MESSAGE_HANDLER_TYPE, AuthorizationState
-from telegram.text import Spoiler
+from teleclient import VERSION
+from teleclient.utils import AsyncResult
+from teleclient.client import Telegram, MESSAGE_HANDLER_TYPE, AuthorizationState
+from teleclient.text import Spoiler
 
 API_ID = 1
 API_HASH = 'hash'

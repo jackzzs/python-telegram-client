@@ -2,8 +2,8 @@ import argparse
 import getpass
 from pprint import pprint
 
-from telegram.client import Telegram
-from telegram.client import AuthorizationState
+from teleclient.client import Telegram
+from teleclient.client import AuthorizationState
 
 import utils
 

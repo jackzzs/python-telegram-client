@@ -24,11 +24,11 @@ from types import FrameType
 from collections import defaultdict
 import enum
 
-from telegram import VERSION
-from telegram.utils import AsyncResult
-from telegram.tdjson import TDJson
-from telegram.worker import BaseWorker, SimpleWorker
-from telegram.text import Element
+from teleclient import VERSION
+from teleclient.utils import AsyncResult
+from teleclient.tdjson import TDJson
+from teleclient.worker import BaseWorker, SimpleWorker
+from teleclient.text import Element
 
 if sys.version_info >= (3, 8):  # Backwards compatibility for python < 3.8
     from typing import Literal
@@ -67,7 +67,7 @@ class Telegram:
         files_directory: Optional[str] = None,
         use_test_dc: bool = False,
         use_message_database: bool = True,
-        device_model: str = 'python-telegram',
+        device_model: str = 'python-telegram-client',
         application_version: str = VERSION,
         system_version: str = 'unknown',
         system_language_code: str = 'en',

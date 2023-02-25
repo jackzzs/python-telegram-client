@@ -1,46 +1,32 @@
-# python-telegram
+# python-telegram-client
 
 [![Build Status](https://github.com/alexander-akhmetov/python-telegram/workflows/python-telegram%20tests/badge.svg)](https://github.com/alexander-akhmetov/python-telegram/actions)
 [![PyPI](https://img.shields.io/pypi/v/python-telegram.svg)](https://pypi.python.org/pypi/python-telegram)
 [![DockerHub](https://img.shields.io/docker/automated/akhmetov/python-telegram.svg)](https://hub.docker.com/r/akhmetov/python-telegram/)
 ![Read the Docs (version)](https://img.shields.io/readthedocs/pip/stable.svg)
 
-Python API for the [tdlib](https://github.com/tdlib/td) library.
-It helps you build your own Telegram clients.
-
-* [Changelog](https://python-telegram.readthedocs.io/en/latest/changelog.html)
-* [Documentation](http://python-telegram.readthedocs.io)
-* [Tutorial](http://python-telegram.readthedocs.io/en/latest/tutorial.html)
+This is a fork of [alexander-akhmetov/python-telegram](https://github.com/alexander-akhmetov/python-telegram).
+The root package is renamed from "telegram" to "teleclient" to avoid name conflict with [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot).
 
 ## Installation
 
 This library requires Python 3.6+ and Linux or MacOS.
 
 ```shell
-pip install python-telegram
+pip install python-telegram-client
 ```
 
 See [documentation](http://python-telegram.readthedocs.io/en/latest/#installation) for more details.
-
-### Docker
-
-This library has a [docker image](https://hub.docker.com/r/akhmetov/python-telegram/):
-
-```sh
-docker run -i -t --rm \
-            -v /tmp/docker-python-telegram/:/tmp/ \
-            akhmetov/python-telegram \
-            python3 /app/examples/send_message.py $(API_ID) $(API_HASH) $(PHONE) $(CHAT_ID) $(TEXT)
-```
 
 ## How to use
 
 Have a look at the [tutorial](http://python-telegram.readthedocs.io/en/latest/tutorial.html) :)
 
 Basic example:
+
 ```python
-from telegram.client import Telegram
-from telegram.text import Spoiler
+from teleclient.client import Telegram
+from teleclient.text import Spoiler
 
 tg = Telegram(
     api_id='api_id',
@@ -68,7 +54,7 @@ tg.stop()  # you must call `stop` at the end of the script
 
 More examples you can find in the [/examples/ directory](/examples/).
 
-----
+---
 
 More information in the [documentation](http://python-telegram.readthedocs.io).
 
