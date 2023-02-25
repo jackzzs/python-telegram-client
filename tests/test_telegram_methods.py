@@ -1,11 +1,11 @@
-import pytest
-
 from unittest.mock import patch
 
+import pytest
+
 from teleclient import VERSION
-from teleclient.utils import AsyncResult
-from teleclient.client import Telegram, MESSAGE_HANDLER_TYPE, AuthorizationState
 from teleclient.text import Spoiler
+from teleclient.utils import AsyncResult
+from teleclient.client import MESSAGE_HANDLER_TYPE, Telegram, AuthorizationState
 
 API_ID = 1
 API_HASH = 'hash'
@@ -16,8 +16,8 @@ DATABASE_ENCRYPTION_KEY = 'changeme1234'
 
 @pytest.fixture
 def telegram():
-    with patch('telegram.client.TDJson'):
-        with patch('telegram.client.threading'):
+    with patch('teleclient.client.TDJson'):
+        with patch('teleclient.client.threading'):
             return _get_telegram_instance()
 
 
@@ -28,8 +28,8 @@ def _get_telegram_instance(**kwargs):
     kwargs.setdefault('library_path', LIBRARY_PATH)
     kwargs.setdefault('database_encryption_key', DATABASE_ENCRYPTION_KEY)
 
-    with patch('telegram.client.TDJson'):
-        with patch('telegram.client.threading'):
+    with patch('teleclient.client.TDJson'):
+        with patch('teleclient.client.threading'):
             tg = Telegram(**kwargs)
 
     return tg
@@ -321,7 +321,7 @@ class TestTelegram:
                 'use_test_dc': False,
                 'api_id': API_ID,
                 'api_hash': API_HASH,
-                'device_model': 'python-telegram',
+                'device_model': 'python-telegram-client',
                 'system_version': 'unknown',
                 'application_version': VERSION,
                 'system_language_code': 'en',

@@ -1,6 +1,6 @@
-import pytest
-
 from unittest.mock import Mock, patch
+
+import pytest
 
 from teleclient.utils import AsyncResult
 
@@ -9,7 +9,7 @@ class TestAsyncResult:
     def test_initial_params(self):
         mocked_uuid = Mock()
         mocked_uuid.uuid4().hex = 'some-id'
-        with patch('telegram.utils.uuid', mocked_uuid):
+        with patch('teleclient.utils.uuid', mocked_uuid):
             async_result = AsyncResult(client='123')
 
         assert async_result.client == '123'
@@ -18,7 +18,7 @@ class TestAsyncResult:
     def test_str(self):
         mocked_uuid = Mock()
         mocked_uuid.uuid4().hex = 'some-id'
-        with patch('telegram.utils.uuid', mocked_uuid):
+        with patch('teleclient.utils.uuid', mocked_uuid):
             async_result = AsyncResult(client=None)
 
         assert async_result.__str__() == f'AsyncResult <some-id>'

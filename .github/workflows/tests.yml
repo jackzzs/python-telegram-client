@@ -1,4 +1,4 @@
-name: python-telegram tests
+name: python-telegram-client tests
 
 on: [push, pull_request]
 

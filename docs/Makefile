@@ -21,5 +21,5 @@ help:
 
 
 build-docs:
-	sphinx-apidoc -o source ../telegram
+	sphinx-apidoc -o source ../teleclient
 	make html
